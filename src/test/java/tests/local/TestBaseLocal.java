@@ -1,9 +1,7 @@
 package tests.local;
 
 import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
-import drivers.BrowserStackDriver;
 import drivers.LocalDriver;
 import helpers.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
@@ -24,8 +22,7 @@ public class TestBaseLocal {
     }
 
     @BeforeEach
-    void beforeEach() {
-        SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
+    void beforeEach() {SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
         open();
     }
 
