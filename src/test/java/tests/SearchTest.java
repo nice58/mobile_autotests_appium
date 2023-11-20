@@ -1,4 +1,4 @@
-package tests.local;
+package tests;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
@@ -13,7 +13,7 @@ import static io.appium.java_client.AppiumBy.id;
 import static io.qameta.allure.Allure.step;
 import static org.openqa.selenium.By.className;
 
-public class SearchTestLocal extends TestBaseLocal {
+public class SearchTest extends TestBase {
 
     @Test
     @Tag("local")
@@ -71,6 +71,4 @@ public class SearchTestLocal extends TestBaseLocal {
                 $(className("android.widget.TextView"))
                         .shouldHave(text("Customize the feed")));
     }
-
-
 }

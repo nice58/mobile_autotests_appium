@@ -1,4 +1,4 @@
-package tests.browserstack;
+package tests;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
@@ -11,7 +11,7 @@ import static com.codeborne.selenide.Selenide.$$;
 import static io.appium.java_client.AppiumBy.*;
 import static io.qameta.allure.Allure.step;
 
-public class SearchTestsBrowserStack extends TestBaseBrowserStack {
+public class SearchTestsBrowserStack extends TestBase {
 
     @Test
     @Tag("android")

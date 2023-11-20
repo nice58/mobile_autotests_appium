@@ -8,6 +8,7 @@ import org.aeonbits.owner.ConfigFactory;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.WebDriver;
 
+import javax.annotation.CheckReturnValue;
 import javax.annotation.Nonnull;
 import java.io.File;
 import java.io.IOException;
@@ -21,6 +22,7 @@ import static org.apache.commons.io.FileUtils.copyInputStreamToFile;
 public class LocalDriver implements WebDriverProvider {
     LocalConfig config = ConfigFactory.create(LocalConfig.class, System.getProperties());
 
+    @CheckReturnValue
     @Nonnull
     @Override
     public WebDriver createDriver(@Nonnull Capabilities capabilities) {
