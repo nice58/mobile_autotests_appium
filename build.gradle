@@ -1,6 +1,6 @@
 plugins {
     id 'java-library'
-    id "io.qameta.allure" version "2.9.6"
+    id "io.qameta.allure" version "2.11.2"
 }
 
 repositories {
@@ -59,7 +59,7 @@ tasks.withType(Test) {
 
 task browserstack_test(type: Test) {
     useJUnitPlatform {
-        includeTags("browserstack")
+        includeTags("android")
     }
 }
 
@@ -68,3 +68,4 @@ task local_test(type: Test) {
         includeTags("local")
     }
 }
+

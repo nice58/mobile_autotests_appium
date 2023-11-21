@@ -4,7 +4,7 @@ import org.aeonbits.owner.Config;
 
 @Config.LoadPolicy(Config.LoadType.MERGE)
 @Config.Sources({
-        "classpath:resources/local.properties"
+        "classpath:local.properties"
 })
 
 public interface LocalConfig extends Config {

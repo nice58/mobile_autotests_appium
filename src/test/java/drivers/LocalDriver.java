@@ -22,6 +22,14 @@ import static org.apache.commons.io.FileUtils.copyInputStreamToFile;
 public class LocalDriver implements WebDriverProvider {
     LocalConfig config = ConfigFactory.create(LocalConfig.class, System.getProperties());
 
+    public static URL getAppiumServerUrl() {
+        try {
+            return new URL("http://localhost:4723/wd/hub");
+        } catch (MalformedURLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     @CheckReturnValue
     @Nonnull
     @Override
@@ -36,14 +44,6 @@ public class LocalDriver implements WebDriverProvider {
                 .setAppActivity("org.wikipedia.main.MainActivity");
 
         return new AndroidDriver(getAppiumServerUrl(), options);
-    }
-
-    public static URL getAppiumServerUrl() {
-        try {
-            return new URL("http://localhost:4723/wd/hub");
-        } catch (MalformedURLException e) {
-            throw new RuntimeException(e);
-        }
     }
 
     private String getAppPath() {
